@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "com.phoen1x.chefsdelightpatch.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ChefsDelightVillagersMixin",
+        "ChefsDelightPoiMixin",
+        "mod.LivingEntityMixin",
+        "mod.VillagerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

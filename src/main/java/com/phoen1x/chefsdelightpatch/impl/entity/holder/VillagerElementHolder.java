@@ -1,0 +1,22 @@
+package com.phoen1x.chefsdelightpatch.impl.entity.holder;
+
+
+import com.phoen1x.chefsdelightpatch.impl.ChefsDelightPatch;
+import com.phoen1x.chefsdelightpatch.impl.entity.SimpleElementHolder;
+import com.phoen1x.chefsdelightpatch.impl.entity.model.EntityModels;
+import com.phoen1x.chefsdelightpatch.impl.entity.model.entity.VillagerModel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.npc.Villager;
+
+public class VillagerElementHolder extends SimpleElementHolder<Villager, VillagerModel> {
+    public static final ResourceLocation PROFESSION_LEVEL_LAYER = ChefsDelightPatch.id("villager_profession_level_layer");
+    public static final ResourceLocation PROFESSION_LAYER = ChefsDelightPatch.id("villager_profession_layer");
+    public static final ResourceLocation TYPE_LAYER = ChefsDelightPatch.id("villager_type_layer");
+
+    public VillagerElementHolder(Villager entity) {
+        super(entity);
+        addConditionalLayer(villager -> villager.getVillagerData().type().unwrapKey().get().location(), TYPE_LAYER, EntityModels.VILLAGER_TYPE::get);
+        addConditionalLayer(villager -> villager.getVillagerData().profession().unwrapKey().get().location(), PROFESSION_LAYER, EntityModels.VILLAGER_PROFESSION::get);
+        addConditionalLayer(villager -> villager.getVillagerData().level(), PROFESSION_LEVEL_LAYER, EntityModels.VILLAGER_PROFESSION_LEVEL::get);
+    }
+}

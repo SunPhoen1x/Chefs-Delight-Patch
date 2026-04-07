@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "chefsdelightpatch",
+	"version": "${version}",
+	"name": "ChefsDelightPatch",
+    "description": "A Polymer Patch mod for Chef's Delight",
+    "authors": [
+      "Sun_Phoen1x"
+    ],
+    "contact": {
+      "discord": "https://discord.gg/czfFedprM4",
+      "source": "https://github.com/SunPhoen1x/Chefs-Delight-Patch",
+      "modrinth": "https://modrinth.com/mod/chefs-delight-polymer"
+    },
+	"license": "MIT",
+	"icon": "assets/chefsdelightpatch/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phoen1x.chefsdelightpatch.impl.ChefsDelightPatch"
+		]
+	},
+	"mixins": [
+		"chefsdelightpatch.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.6",
+		"minecraft": "~1.21.8",
+        "chefsdelight": "*",
+		"java": ">=21",
+        "fabric-api": "*",
+        "polymer-core": ">=0.13.3",
+        "polymer-resource-pack": ">=0.13.3",
+        "polymer-virtual-entity": ">=0.13.3"
+	}
+}
